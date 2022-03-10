@@ -1,3 +1,7 @@
+import PageObjects.GeneralActions;
+import PageObjects.MainPage;
+import PageObjects.ShoppingCartSummary;
+import TestDefinitions.BuyOneElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,33 +15,45 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class Main {
+public class Main  {
 
 
     private static WebDriver driver;
+    private static MainPage mainPage;
+    private static GeneralActions generalActions;
+    private static ShoppingCartSummary shoppingCartSummary;
+    private static BuyOneElement buyOneElement;
+
     private  static ChromeDriver chromeDriver;
     private static ChromeOptions chromeOptions;
+
 
     @BeforeEach
     void init(){
 
-        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumPractice\\driver\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://www.selenium.dev/documentation/webdriver/browser/navigation/");
-        driver.getTitle();
+        mainPage = new MainPage(driver);
+        buyOneElement = new BuyOneElement(driver);
+        shoppingCartSummary= new ShoppingCartSummary(driver);
+        generalActions = new GeneralActions(driver);
+        driver.get("http://automationpractice.com/index.php");
+
         /*
         To make sure element is on webpage before we interract with it.
          */
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 
+    }
 
-
-
+    @Test
+    void run2() {
+            buyOneElement.buyElement6();
     }
 
 
-    @Test
+   /* @Test
     void  run(){
 
         driver.getCurrentUrl();
@@ -69,7 +85,7 @@ public class Main {
         driver.switchTo().defaultContent();
 
     }
-
+*/
 
 
     @Test
@@ -78,10 +94,9 @@ public class Main {
         String originalWindow = driver.getWindowHandle();
         driver.manage().window().fullscreen();
         //Otwiera nową zakładke
-        driver.switchTo().newWindow(WindowType.TAB).get("https://www.selenium.dev/documentation/webdriver/elements/");
+    //    driver.switchTo().newWindow(WindowType.TAB).get("https://www.selenium.dev/documentation/webdriver/elements/");
         //Wraca do strony głównej
-        driver.switchTo().window(originalWindow);
-        driver.close();
+       // driver.switchTo().window(originalWindow);
         driver.quit();
     }
 }

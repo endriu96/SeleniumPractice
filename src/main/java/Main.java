@@ -50,6 +50,7 @@ public class Main  {
     @Test
     void run2() {
             buyOneElement.buyElement6();
+            driver.close();
     }
 
 
@@ -88,7 +89,7 @@ public class Main  {
 */
 
 
-    @Test
+   /* @Test
     void runWindowsTest(){
         //Tworzy zmienną która focusuje strone główną
         String originalWindow = driver.getWindowHandle();
@@ -99,4 +100,6 @@ public class Main  {
        // driver.switchTo().window(originalWindow);
         driver.quit();
     }
+
+    */
 }

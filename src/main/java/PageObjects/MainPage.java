@@ -20,6 +20,7 @@ public class MainPage  extends GeneralActions{
     }
 
 
+
     public void addToCart6(){
         scrollToElement(addToCartButton6working);
         click(addToCartButton6working);

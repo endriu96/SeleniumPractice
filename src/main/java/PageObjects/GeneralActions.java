@@ -43,6 +43,8 @@ public class GeneralActions {
         driver.findElement(element).click();
     }
 
+
+
     protected boolean isPresent(By element){
         return (driver.findElements(element).size()>0);
     }
@@ -72,6 +74,9 @@ public class GeneralActions {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
 
     }
+
+
+
 
 
 

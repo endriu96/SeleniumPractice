@@ -49,8 +49,8 @@ public class Main  {
 
     @Test
     void run2() {
-            buyOneElement.buyElement6();
-            driver.close();
+            buyOneElement.buyElement6withNewAccount();
+
     }
 
 

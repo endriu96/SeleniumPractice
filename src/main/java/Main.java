@@ -3,14 +3,12 @@ import PageObjects.MainPage;
 import PageObjects.ShoppingCartSummary;
 import TestDefinitions.BuyOneElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -28,8 +26,43 @@ public class Main  {
     private static ChromeOptions chromeOptions;
 
 
-    @BeforeEach
-    void init(){
+
+
+
+        public void run(){
+
+        }
+
+
+
+
+
+
+    /*public int factorial(int a){
+        if(a==0 && a==1){
+            return 1;
+        }else {
+        }
+    }
+    */
+   /* @Test
+    public void verifyHomepageTitle() {
+        String baseUrl = "http://demo.guru99.com/test/newtours/";
+
+
+        System.out.println("launching firefox browser");
+        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumPractice\\driver\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.get(baseUrl);
+        String expectedTitle = "Welcome: Mercury Tours";
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals(actualTitle, expectedTitle);
+    }
+
+    */
+
+
+        void init(){
 
         System.setProperty("webdriver.chrome.driver", "C:\\SeleniumPractice\\driver\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
@@ -52,6 +85,8 @@ public class Main  {
             buyOneElement.buyElement6withNewAccount();
 
     }
+
+
 
 
    /* @Test

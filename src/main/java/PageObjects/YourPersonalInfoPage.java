@@ -18,6 +18,7 @@ public class YourPersonalInfoPage extends GeneralActions{
     private static By passwordField = new By.ByXPath("//input[contains(@type,\"password\")]" +
             "[contains(@id,\"passwd\")]");
     private static By dateOfBirthDaysSelect = new By.ByXPath("//select[contains(@id,\"days\")]");
+    private static By selectDays = new By.ByXPath("//select[contains(@id,days)][contains(@name,days)]//option[contains(@value,25)]");
     private static By dateOfBirthMonthsSelect = new By.ByXPath("//select[contains(@id,\"months\")]");
     private static By dateOfBirthYearsSelect = new By.ByXPath("//select[contains(@id,\"years\")]");
 
